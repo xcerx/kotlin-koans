@@ -13,5 +13,13 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    var text : String = "{"
+    for (i in collection.indices) {
+        text += "${collection.toList()[i]}"
+        if(i < collection.size-1) {
+            text += ", "
+        }
+    }
+    text += "}"
+    return text;
 }
