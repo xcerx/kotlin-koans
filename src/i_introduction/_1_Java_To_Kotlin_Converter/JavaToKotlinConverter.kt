@@ -21,5 +21,5 @@ fun task1(collection: Collection<Int>): String {
         }
     }
     text += "}"
-    return text;
+    return text
 }
