@@ -1,7 +1,7 @@
 package iii_conventions
 
 fun task25(date1: MyDate, date2: MyDate): Boolean {
-    return date1.compareTo(date2) == -1
+    return date1 < date2
 }
 
 operator fun MyDate.compareTo(other: MyDate): Int {

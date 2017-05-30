@@ -18,4 +18,22 @@ class DateRange(val start: MyDate, val endInclusive: MyDate) {
         return date >= start && date <= endInclusive
     }
 
+    operator fun iterator(): Iterator<MyDate> {
+        return DateRangeIterator(start, endInclusive)
+    }
+
+}
+
+class DateRangeIterator(var start: MyDate, val endInclusive: MyDate) : Iterator<MyDate> {
+
+    override fun hasNext(): Boolean {
+        return start <= endInclusive
+    }
+
+    override fun next(): MyDate {
+        val now = start
+        start = start.nextDay()
+        return now
+    }
+
 }
